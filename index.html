@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Weather Dashboard</title>
+</head>
+<body>
+    <!-- Try to see if the text can be centered later -->
+    <nav class="navbar navbar-dark bg-dark ht-100">
+        <a href="#" class="navbar-brand">
+           <h2>Weather Dashboard</h2>
+        </a>
+    </nav>
+       
+    <main>
+        <!-- page container -->
+        <div class="container row">
+            <div class="col-4 bg-light">
+                <!-- left hand container to search for a city and history -->
+                <div class="container" id="search">
+                    <!-- search for a city function -->
+                    <div class="row" id="search-city">
+                        <h4>Search for a City</h4>
+                    </div>
+                    <div class="row">
+                        <form class="form-inline">
+                            <div class="form-group mx-sm-3 mb-2">
+                                <label for="city"></label>
+                                <input type="text" class="form-control" id="enter-city" placeholder="Enter a City">
+                            </div>
+                            <button type="button" class="btn btn-primary mb-2" id="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- search history section -->
+                <div class="row" id="search-history">
+                    <div class="w-100" id="history-list">
+                        <button class="btn btn-lg btn-outline-info text-dark w-100 text-left mt-2">Test City</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+    
+</body>
+<script src="assets/js/script.js"></script>
+</html>
