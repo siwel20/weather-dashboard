@@ -11,7 +11,7 @@
     <!-- Try to see if the text can be centered later -->
     <nav class="navbar navbar-dark bg-dark ht-100">
         <a href="#" class="navbar-brand">
-           <h2>Weather Dashboard</h2>
+           <h1>Weather Dashboard</h1>
         </a>
     </nav>
        
@@ -31,7 +31,7 @@
                                 <label for="city"></label>
                                 <input type="text" class="form-control" id="enter-city" placeholder="Enter a City">
                             </div>
-                            <button type="button" class="btn btn-primary mb-2" id="submit">Submit</button>
+                            <button type="submit" class="btn btn-primary mb-2" id="submit-btn">Submit</button>
                         </form>
                     </div>
                 </div>
@@ -49,47 +49,70 @@
                         <div class="row">
                             <h3 id="current-city">Placeholder for current city</h3>
                             <h3 id="current-date">06/12/2020 Placeholder</h3>
-                            <div id="future-icon">
-                                <!-- add future icon here -->
-                            </div>
+                            <!-- add future icon here -->
+                            <div id="future-icon"></div>
                         </div>
-                        <div class="row">
-                            <h4 class="font-weight-normal" id="temperature">
-                                Temperature
-                            </h4>
-                        </div>
-                        <div class="row">
-                            <h4 class="font-weight-normal" id="humidity">
-                                Humidity
-                            </h4>
-                        </div>
-                        <div class="row">
-                            <h4 class="font-weight-normal" id="wind-speed">
-                                Wind Speed
-                            </h4>
-                        </div>
-                        <div class="row">
-                            <h4 class="font-weight-normal" id="uv-index">
-                                UV Index
-                            </h4>
-                        </div>
+                        <p>Temperature: <span id="current-temperature"></span></p>
+                        <p>Humidity: <span id="current-humidity"></span></p>
+                        <p>Wind Speed: <span id="current-windspeed"></span></p>
+                        <p>UV Index: <span id="current-uv-index"></span></p>
                     </div>
-                    <div class="container row">
+                    <div class="container row" id="forcast">
                         <h3 class="col-12">
                             5-Day Forcast:
                         </h3>
                         <div class="col">
-                            <div class="card">
+                            <div class="card bg-primary text-light w-100">
                                 <div>
-                                    <h5>
-                                        June 12, 2020
-                                    </h5>
-                                    <p>
-                                        Temp
-                                    </p>
-                                    <p>
-                                        Humidity
-                                    </p>
+                                    <h5 id="day-1">Date</h5>
+                                    <!-- look for weather icon to add here-->
+                                    <div id="icon-1">Future Icon Here</div>
+                                    <p>Temp: <span id="temp-1"></span></p>
+                                    <p>Humidity: <span id="humidity-1"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card bg-primary text-light w-100">
+                                <div>
+                                    <h5 id="day-2">Date</h5>
+                                    <!-- look for weather icon to add here-->
+                                    <div id="icon-2">Future Icon Here</div>
+                                    <p>Temp: <span id="temp-2"></span></p>
+                                    <p>Humidity: <span id="humidity-2"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card bg-primary text-light w-100">
+                                <div>
+                                    <h5 id="day-3">Date</h5>
+                                    <!-- look for weather icon to add here-->
+                                    <div id="icon-3">Future Icon Here</div>
+                                    <p>Temp: <span id="temp-3"></span></p>
+                                    <p>Humidity: <span id="humidity-3"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card bg-primary text-light w-100">
+                                <div>
+                                    <h5 id="day-4">Date</h5>
+                                    <!-- look for weather icon to add here-->
+                                    <div id="icon-4">Future Icon Here</div>
+                                    <p>Temp: <span id="temp-4"></span></p>
+                                    <p>Humidity: <span id="humidity-4"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card bg-primary text-light w-100">
+                                <div>
+                                    <h5 id="day-5">Date</h5>
+                                    <!-- look for weather icon to add here-->
+                                    <div id="icon-5">Future Icon Here</div>
+                                    <p>Temp: <span id="temp-5"></span></p>
+                                    <p>Humidity: <span id="humidity-5"></span></p>
                                 </div>
                             </div>
                         </div>
