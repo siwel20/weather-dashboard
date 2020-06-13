@@ -22,8 +22,9 @@ var cityEl = document.querySelector("#enter-city")
 
 
 var buttonClickHandler = function(event) {
-    var city = event.value;
-    console.log(city);
+    var cityEl = event.value;
+    console.log(cityEl);
+    // add call to future weather fuction here
 }
 
 
