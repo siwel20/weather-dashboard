@@ -20,7 +20,6 @@ var cityEl = document.querySelector("#enter-city")
 
 
 
-
 var buttonClickHandler = function(event) {
     var cityEl = event.value;
     console.log(cityEl);
