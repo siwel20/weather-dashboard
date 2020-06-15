@@ -11,7 +11,6 @@ var buttonEl = document.querySelector("#submit-btn")
 
 var currentWeather = function(city) {
     var weatherApi =  "http://api.openweathermap.org/data/2.5/weather?q=" + city +"&units=imperial&appid=2147c5e1e52bb56099d408345626b4e8"
-
     fetch(weatherApi)
         .then(function (response) {
             if (response.ok) {
@@ -24,19 +23,35 @@ var currentWeather = function(city) {
                         document.getElementById("current-windspeed").innerText = data.wind.speed
 
                         // ask the learning assistance to help with this. 
-                        fetch("http://api.openweathermap.org/data/2.5/uvi?lat=" + data.city.coord.lat + "&lon=" + data.city.coord.lon + "&appid=2147c5e1e52bb56099d408345626b4e8")
+                        var lat = data.coord.lat
+                        var lon = data.coord.lon
+                        fetch("http://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&appid=2147c5e1e52bb56099d408345626b4e8")
                             .then(function(response) {
                                 if (response.ok) {
                                     response.json()
                                         .then(function(data) {
-                                            console.log(data)
-                                            // keep working here
+                                            document.getElementById("current-uv-index").innerText = data.value
+                                            // add the UV Index color here
+                                            if (data.value <= 3) {
+                                                console.log("value is less than 3");
+                                            }
+                                            else if (data.value > 4 && data.value < 8) {
+                                                console.log("value is between 4 & 8");
+                                            }
+                                            else if (data.value >= 8){
+                                                console.log("value is greater than 8");
+                                            }
+
+                                            
                                         })
                                 }
                             })
                     })
             }
         })
+        .catch(function (error) {
+            alert("Unable to connect to weather");
+        });
         
 }
 
