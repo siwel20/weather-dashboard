@@ -60,6 +60,7 @@ var currentWeather = function(city) {
                 if (response.ok) {
                     response.json()
                         .then(function (data) {
+                            var i = 0
                             for (let index = 0; index < data.list.length; index++) {
  
                                 if (data.list[index].dt_txt.includes("00:00:00")) {
@@ -70,18 +71,14 @@ var currentWeather = function(city) {
                                     var temp = data.list[index].main.temp
                                     var humidity = data.list[index].main.humidity
                                     // Day 1
-                                    document.getElementById("day-1").textContent = date
-                                    document.getElementById("image-1").setAttribute("src", iconurl)
-                                    document.getElementById("temp-1").textContent = temp
-                                    document.getElementById("humidity-1").textContent = humidity
+                                    document.getElementById("day-" + i).textContent = date
+                                    document.getElementById("image-" + i).setAttribute("src", iconurl)
+                                    document.getElementById("temp-" + i).textContent = temp
+                                    document.getElementById("humidity-" + i).textContent = humidity
                                     // Day 2
-                                    document.getElementById("day-2").textContent = date
-                                    document.getElementById("image-2").setAttribute("src", iconurl)
-                                    document.getElementById("temp-2").textContent = temp
-                                    document.getElementById("humidity-2").textContent = humidity
                                     // Something is off with the index. I will need to look into this more. Both day 1 and day 2 keep pulling day 5 information. 
 
-                                
+                                i++
                                 }
                             }
                         })
