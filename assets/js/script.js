@@ -22,7 +22,6 @@ var currentWeather = function(city) {
                         document.getElementById("current-humidity").innerText = data.main.humidity
                         document.getElementById("current-windspeed").innerText = data.wind.speed
 
-                        // ask the learning assistance to help with this if I can't figure it out. 
                         var lat = data.coord.lat
                         var lon = data.coord.lon
                         fetch("https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&appid=2147c5e1e52bb56099d408345626b4e8")
@@ -65,20 +64,16 @@ var currentWeather = function(city) {
  
                                 if (data.list[index].dt_txt.includes("00:00:00")) {
                                  console.log(data.list[index]);
-                                 // this is pulling the five days, so what am I missing?
                                     var date = moment(data.list[index].dt,"X").format("MM/DD/YYYY")
                                     var iconurl = "https://openweathermap.org/img/w/" + data.list[index].weather[0].icon + ".png"
                                     var temp = data.list[index].main.temp
                                     var humidity = data.list[index].main.humidity
-                                    // Day 1
+                                    // 5 day forcast
                                     document.getElementById("day-" + i).textContent = date
                                     document.getElementById("image-" + i).setAttribute("src", iconurl)
                                     document.getElementById("temp-" + i).textContent = temp
                                     document.getElementById("humidity-" + i).textContent = humidity
-                                    // Day 2
-                                    // Something is off with the index. I will need to look into this more. Both day 1 and day 2 keep pulling day 5 information. 
-
-                                i++
+                                    i++
                                 }
                             }
                         })
