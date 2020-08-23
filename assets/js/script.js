@@ -1,13 +1,5 @@
 var buttonEl = document.querySelector("#submit-btn")
-
-
-
-
-
-
-
-
-
+var addCity = [];
 
 var currentWeather = function(city) {
     var weatherApi =  "https://api.openweathermap.org/data/2.5/weather?q=" + city +"&units=imperial&appid=2147c5e1e52bb56099d408345626b4e8"
@@ -82,12 +74,34 @@ var currentWeather = function(city) {
         
 }
 
+var saveHistory= function() {
+    localStorage.setItem("City", JSON.stringify(addCity));
+}
+
+var searchHistory= function(city) {
+    var button= document.createElement("button")
+    button.setAttribute("class","btn btn-lg btn-outline-secondary text-dark w-100 text-left mt-2");
+    button.textContent= city
+    button.addEventListener("click", function() {
+        var city= this.textContent
+        currentWeather(city);
+    })
+    document.getElementById("history-list").appendChild(button);
+}
+
+var loadHistory= function () {
+   
+   if (localStorage.getItem("City")) {
+       addCity= JSON.parse(localStorage.getItem("City"))
+
+       for (let index = 0; index < addCity.length; index++) {
+           searchHistory(addCity[index])
+       }
+   }
+}
 
 
-
-
-
-
+loadHistory();
 
 
 
@@ -95,7 +109,10 @@ var buttonClickHandler = function(event) {
     event.preventDefault();
     var cityEl = document.querySelector("#enter-city")
     currentWeather(cityEl.value);
+    addCity.push(cityEl.value);
     // add call to future weather fuction here
+    saveHistory();
+   searchHistory(cityEl.value);
 }
 
 
